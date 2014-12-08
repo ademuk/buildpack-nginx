@@ -19,14 +19,6 @@ CUR_DIR=`cd $(dirname $0); cd ..; pwd`
 
 mkdir -p $BUILD_DIR $CACHE_DIR
 
-echo "-----> copy static files to www"
-rm -rf $CACHE_DIR
-mkdir -p $CACHE_DIR
-mv $BUILD_DIR/* $CACHE_DIR
-mkdir -p $BUILD_DIR
-mv $CACHE_DIR/* $BUILD_DIR
-rm -rf $CACHE_DIR
-
 cd $CACHE_DIR
 
 if [[ ! -d "${NGINX_TARBALL%.tar.gz}" ]]; then
